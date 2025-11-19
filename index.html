@@ -104,13 +104,56 @@
       border: 0;
       border-radius: 10px;
     }
-  </style>
+      /* Novo cabeçalho com imagem cobrindo tudo */
+    header {
+      position: relative;
+      height: 280px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .header-bg {
+      background: url('https://images.pexels.com/photos/11754263/pexels-photo-11754263.jpeg') center/cover no-repeat;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: brightness(0.5);
+    }
+
+    header h1 {
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      padding: 10px 20px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 10px;
+    }
+
+    /* Responsividade do carrossel */
+    @media (max-width: 900px) {
+      .card {
+        min-width: 80%;
+        margin: 0 10%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        min-width: 100%;
+        margin: 0;
+      }
+    }
+
+</style>
 </head>
 <body>
   <header>
-    <!-- Espaço da imagem do cabeçalho -->
-    <img src="https://images.pexels.com/photos/11754263/pexels-photo-11754263.jpeg" alt="Logo da Escola" />
-    <h1>Escola de Música Belas Artes</h1>
+    <div class="header-bg">
+      <h1>Escola de Música Belas Artes</h1>
+    </div>
   </header>
 
   <div class="container">
@@ -133,50 +176,50 @@
 
           <!-- CARD 1 -->
           <div class="card">
-            <img src="https://images.pexels.com/photos/28338002/pexels-photo-28338002.jpeg" alt="Violino" />
+            <img src="IMG_VIOLINO" alt="Violino" />
             <h3>Violino</h3>
             <p>O violino, com seu timbre brilhante, encanta corações há séculos.</p>
-           <button onclick="window.open('https://wa.me/5567991991655?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20Violino.%20Como%20fa%C3%A7o%3F','_blank')">Whatsapp</button,'_blank')">Whatsapp</button>
+            <button onclick="window.open('https://wa.me/5567991991655?text=Texto%20de%20contato','_blank')">Whatsapp</button>
           </div>
 
           <!-- CARD 2 -->
           <div class="card">
-            <img src="https://images.pexels.com/photos/19769696/pexels-photo-19769696.jpeg" alt="Viola de Arco" />
+            <img src="IMG_VIOLA" alt="Viola de Arco" />
             <h3>Viola de Arco</h3>
             <p>Som aveludado e profundo, perfeito para expressões musicais intensas.</p>
-            <button onclick="window.open('https://wa.me/5567991991655?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20Viola%20de%20Arco.%20Como%20fa%C3%A7o%3F','_blank')">Whatsapp</button,'_blank')">Whatsapp</button>
+            <button onclick="window.open('https://wa.me/5567991991655?text=Texto%20de%20contato','_blank')">Whatsapp</button>
           </div>
 
           <!-- CARD 3 -->
           <div class="card">
-            <img src="https://images.pexels.com/photos/8519669/pexels-photo-8519669.jpeg" alt="Violoncelo" />
+            <img src="IMG_CELLO" alt="Violoncello" />
             <h3>Violoncello</h3>
             <p>O violoncello, com seu som encorpado, toca a alma e o coração.</p>
-            <button onclick="window.open('https://wa.me/5567991991655?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20Voloncelo.%20Como%20fa%C3%A7o%3F','_blank')">Whatsapp</button,'_blank')">Whatsapp</button>
+            <button onclick="window.open('https://wa.me/5567991991655?text=Texto%20de%20contato','_blank')">Whatsapp</button>
           </div>
 
           <!-- CARD 4 -->
           <div class="card">
-            <img src="https://images.pexels.com/photos/322719/pexels-photo-322719.jpeg" alt="Piano" />
+            <img src="IMG_PIANO" alt="Piano" />
             <h3>Piano</h3>
             <p>Um dos instrumentos mais completos, ideal para expressar emoção e técnica.</p>
-            <button onclick="window.open('https://wa.me/5567991991655?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20Piano.%20Como%20fa%C3%A7o%3F','_blank')">Whatsapp</button,'_blank')">Whatsapp</button>
+            <button onclick="window.open('https://wa.me/5567991991655?text=Texto%20de%20contato','_blank')">Whatsapp</button>
           </div>
 
           <!-- CARD 5 -->
           <div class="card">
-            <img src="https://images.pexels.com/photos/33028371/pexels-photo-33028371.jpeg" alt="Órgão" />
+            <img src="IMG_ORGAO" alt="Órgão" />
             <h3>Órgão</h3>
             <p>Clássico e majestoso, perfeito para performances grandiosas.</p>
-            <button onclick="window.open('https://wa.me/5567991991655?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20Órgão%20Eletronico.%20Como%20fa%C3%A7o%3F','_blank')">Whatsapp</button,'_blank')">Whatsapp</button>
+            <button onclick="window.open('https://wa.me/5567991991655?text=Texto%20de%20contato','_blank')">Whatsapp</button>
           </div>
 
           <!-- CARD 6 -->
           <div class="card">
-            <img src="https://images.pexels.com/photos/8042643/pexels-photo-8042643.jpeg" alt="Teclado" />
+            <img src="IMG_TECLADO" alt="Teclado" />
             <h3>Teclado</h3>
             <p>Versátil e moderno, ideal para qualquer estilo musical.</p>
-            <button onclick="window.open('https://wa.me/5567991991655?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20aulas%20de%20Teclado.%20Como%20fa%C3%A7o%3F','_blank')">Whatsapp</button,'_blank')">Whatsapp</button>
+            <button onclick="window.open('https://wa.me/5567991991655?text=Texto%20de%20contato','_blank')">Whatsapp</button>
           </div>
 
         </div>
@@ -214,6 +257,6 @@
       carousel.style.transform = `translateX(${position}px)`;
     }
   </script>
+
 </body>
 </html>
-
