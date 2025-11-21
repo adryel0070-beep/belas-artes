@@ -323,38 +323,45 @@ A Escola de Música Belas Artes transforma vidas através da arte com professore
 </footer>
 
 <script>
-// Rolagem do carrossel
-function rolarCarrossel(dir){
+function rolarCarrossel(direcao) {
   const carrossel = document.getElementById("carrossel");
-  const larguraCard = 330;
-  carrossel.scrollLeft += dir * larguraCard;
-  atualizarBolinhas();
-}
+  const cards = document.querySelectorAll(".card");
 
-// Criar bolinhas
-const carrossel = document.getElementById("carrossel");
-const bolinhas = document.getElementById("bolinhas");
-const total = carrossel.children.length;
-const porPagina = 3;
-const totalPaginas = Math.ceil(total / porPagina);
+  if (cards.length === 0) return;
 
-for(let i=0;i<totalPaginas;i++){
-  let b = document.createElement("div");
-  b.className = "bolinha";
-  bolinhas.appendChild(b);
-}
+  const cardWidth = cards[0].offsetWidth; 
+  const gap = 25; // mesmo valor usado no CSS
+  const passo = cardWidth + gap;
 
-function atualizarBolinhas(){
-  const index = Math.round(carrossel.scrollLeft / 330);
-  const pagina = Math.floor(index / porPagina);
+  // Calcula qual card está mais ao centro
+  const centro = carrossel.scrollLeft + carrossel.clientWidth / 2;
 
-  [...bolinhas.children].forEach((b,i)=>{
-    b.classList.toggle("ativa", i === pagina);
+  let indiceAtual = 0;
+  let menorDistancia = Infinity;
+
+  cards.forEach((card, index) => {
+    const cardCentro = card.offsetLeft + cardWidth / 2;
+    const distancia = Math.abs(cardCentro - centro);
+
+    if (distancia < menorDistancia) {
+      menorDistancia = distancia;
+      indiceAtual = index;
+    }
   });
-}
 
-atualizarBolinhas();
+  // Move para o próximo card na direção dos botões
+  const novoIndice = Math.min(
+    cards.length - 1,
+    Math.max(0, indiceAtual + direcao)
+  );
+
+  const posicaoAlvo =
+    cards[novoIndice].offsetLeft - (carrossel.clientWidth / 2 - cardWidth / 2);
+
+  carrossel.scrollTo({ left: posicaoAlvo, behavior: "smooth" });
+}
 </script>
 
 </body>
 </html>
+
